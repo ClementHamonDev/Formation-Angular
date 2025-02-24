@@ -1,4 +1,6 @@
-<app-premier/>
-<app-premier/>
-<app-premier/>
+<app-user-profile [profession]="professionParent()" [annee]=4 (message)="receiveMessage($event)" />
+<button (click)="modify()">Modifier</button>
+<p>Message recu : {{receivedMessage}}</p>
+
+<app-bidirectionnal-parent/>
 <router-outlet />

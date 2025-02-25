@@ -6,10 +6,12 @@ import { UserProfileComponent } from "./user-profile/user-profile.component";
 import { BidirectionnalParentComponent } from "./bidirectionnal-parent/bidirectionnal-parent.component";
 import { CommonModule } from '@angular/common';
 import { PaginationComponent } from "../pagination/pagination.component";
+import { AppListComponent } from "./app-list/app-list.component";
+import { ModalComponent } from "./modal/modal.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, UserProfileComponent, BidirectionnalParentComponent, CommonModule, PaginationComponent],
+  imports: [RouterOutlet, UserProfileComponent, BidirectionnalParentComponent, CommonModule, PaginationComponent, ModalComponent, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -23,6 +25,8 @@ export class AppComponent {
   names = ["Alice", "Bob", "Charlie"];
 
   currentPage = signal<number>(1);
+
+  selectedComponent = PaginationComponent;
 
   receiveMessage(message: string){
     console.log('Données reçues de l’enfant:', message);

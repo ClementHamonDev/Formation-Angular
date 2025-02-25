@@ -10,4 +10,17 @@
 <ul>
   <li *ngFor="let user of users, trackBy: trackById">{{user.name}}</li>
 </ul>
+
+<app-modal>
+  <app-bidirectionnal-parent/>
+</app-modal>
+
+<app-modal>
+  <app-pagination [(page)]="currentPage"/>
+  <app-user-profile [profession]="professionParent()" [annee]=4 (message)="receiveMessage($event)" />
+</app-modal>
+
+<ng-container *ngComponentOutlet="selectedComponent"></ng-container>
+
+
 <router-outlet />

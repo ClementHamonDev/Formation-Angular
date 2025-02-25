@@ -3,4 +3,11 @@
 <p>Message recu : {{receivedMessage}}</p>
 
 <app-bidirectionnal-parent/>
+<app-pagination [(page)]="currentPage"/>
+<button (click)="suivant()">Page suivante</button>
+<p>{{currentPage()}}</p>
+
+<ul>
+  <li *ngFor="let user of users, trackBy: trackById">{{user.name}}</li>
+</ul>
 <router-outlet />

@@ -3,9 +3,14 @@ import { Component, model } from '@angular/core';
 @Component({
   selector: 'app-pagination',
   imports: [],
-  template: '<p>Page numéro : {{page()}}</p> <button (click)="page.set(page() + 1)">Suivant</button>',
+  templateUrl: './pagination.component.html',
   styleUrl: './pagination.component.css'
 })
 export class PaginationComponent {
   page = model(1);
+
+  pageChanged(event : Event){
+    let newValue: number  = parseInt((event.target as HTMLInputElement).value);
+    this.page.set(newValue);
+  }
 }

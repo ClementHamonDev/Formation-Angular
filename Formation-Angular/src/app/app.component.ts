@@ -7,11 +7,14 @@ import { BidirectionnalParentComponent } from "./bidirectionnal-parent/bidirecti
 import { CommonModule } from '@angular/common';
 import { PaginationComponent } from "../pagination/pagination.component";
 import { AppListComponent } from "./app-list/app-list.component";
-import { ModalComponent } from "./modal/modal.component";
+import { CardComponent } from "./components/card-component/card-component.component";
+import { DynamicParentComponent } from "./components/dynamic-parent/dynamic-parent.component";
+import { ParentComponent } from "./components/parent-outlet/parent-outlet.component";
+import { ModalComponent} from "./components/modal/modal.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, UserProfileComponent, BidirectionnalParentComponent, CommonModule, PaginationComponent, ModalComponent, CommonModule],
+  imports: [RouterOutlet, UserProfileComponent, BidirectionnalParentComponent, CommonModule, PaginationComponent, ModalComponent, CommonModule, CardComponent, DynamicParentComponent, ParentComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

@@ -18,10 +18,11 @@ import { ConnectionComponent } from "./conditions/connection/connection.componen
 import { PermissionsComponent } from "./conditions/permissions/permissions.component";
 import { RoleSwitchComponent } from "./conditions/role-switch/role-switch.component";
 import { FormulaireComponent } from "./formulaire/formulaire.component";
+import { FormulaireGroupComponent } from "./formulaire/formulaire-group/formulaire-group.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, UserProfileComponent, BidirectionnalParentComponent, CommonModule, PaginationComponent, CommonModule, CardComponent, ButtonComponent, HoverboxComponent, KeytrackerComponent, ConnectionComponent, PermissionsComponent, RoleSwitchComponent, FormulaireComponent],
+  imports: [RouterOutlet, UserProfileComponent, BidirectionnalParentComponent, CommonModule, PaginationComponent, CommonModule, CardComponent, ButtonComponent, HoverboxComponent, KeytrackerComponent, ConnectionComponent, PermissionsComponent, RoleSwitchComponent, FormulaireComponent, FormulaireGroupComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

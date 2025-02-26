@@ -1,0 +1,22 @@
+<div class="form-container">
+    <form [formGroup]="formulaire" (submit)="onSubmit()">
+        <div>
+            <label for="nom">Nom:</label>
+            <input id="nom" formControlName="nom" type="text" />
+            @if (formulaire.get('nom')?.invalid && formulaire.get('nom')?.touched) {
+            <small *ngIf="formulaire.get('nom')?.errors?.['minlength']">Le nom doit contenir au moins 3
+                caractères.</small>
+            }
+        </div>
+
+        <div>
+            <label for="email">Email:</label>
+            <input id="email" formControlName="email" type="email" />
+            @if (formulaire.get('nom')?.invalid && formulaire.get('nom')?.touched) {
+            <small *ngIf="formulaire.get('email')?.errors?.['email']">Veuillez entrer un email valide.</small>
+            }
+        </div>
+
+        <button type="submit" [disabled]="formulaire.invalid">Soumettre</button>
+    </form>
+</div>

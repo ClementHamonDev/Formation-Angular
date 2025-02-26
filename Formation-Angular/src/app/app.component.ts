@@ -11,10 +11,13 @@ import { CardComponent } from "./components/card-component/card-component.compon
 import { DynamicParentComponent } from "./components/dynamic-parent/dynamic-parent.component";
 import { ParentComponent } from "./components/parent-outlet/parent-outlet.component";
 import { ModalComponent} from "./components/modal/modal.component";
+import { ButtonComponent } from "./events/button/button.component";
+import { HoverboxComponent } from "./events/hoverbox/hoverbox.component";
+import { KeytrackerComponent } from "./events/keytracker/keytracker.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, UserProfileComponent, BidirectionnalParentComponent, CommonModule, PaginationComponent, ModalComponent, CommonModule, CardComponent, DynamicParentComponent, ParentComponent],
+  imports: [RouterOutlet, UserProfileComponent, BidirectionnalParentComponent, CommonModule, PaginationComponent, CommonModule, CardComponent, ButtonComponent, HoverboxComponent, KeytrackerComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -53,4 +56,13 @@ export class AppComponent {
   suivant(){
     this.currentPage.set(this.currentPage() + 1);
   }
+
+  console(){
+    console.log("console")
+  }
+
+  isLoggedIn = true;
+  isPremium = true;
+
+  condition = "c";
 }

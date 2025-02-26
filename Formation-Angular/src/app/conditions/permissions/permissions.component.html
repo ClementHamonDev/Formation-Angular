@@ -1,0 +1,24 @@
+<div>
+
+    @if (isLoggedIn && hasSubscription){
+    <p>Accès au contenu premium</p>
+    }
+
+    @if (isAdmin){
+    <p>Utilisateur non-premium connecté</p>
+    }
+
+    @if (!isLoggedIn){
+    <p>Utilisateur non-premium ou non-connecté</p>
+    }
+
+    <button (click)="toggleLogin()">
+        {{ isLoggedIn ? 'Se déconnecter' : 'Se connecter' }}
+    </button>
+    <button (click)="toggleSubscription()" [disabled]="!isLoggedIn">
+        {{ hasSubscription ? 'Annuler abonnement' : 'S’abonner' }}
+    </button>
+    <button (click)="toggleAdmin()">
+        {{ isAdmin ? 'Révoquer admin' : 'Devenir admin' }}
+    </button>
+</div>

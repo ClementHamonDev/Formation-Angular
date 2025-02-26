@@ -15,7 +15,7 @@
     }
   
     <label for="role">Choisir un rôle :</label>
-    <select id="role" [(ngModel)]="role">
+    <select id="role" (change)="selectRole($event)">
       <option value="admin">Admin</option>
       <option value="editor">Éditeur</option>
       <option value="user">Utilisateur</option>

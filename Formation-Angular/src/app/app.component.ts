@@ -14,10 +14,14 @@ import { ModalComponent} from "./components/modal/modal.component";
 import { ButtonComponent } from "./events/button/button.component";
 import { HoverboxComponent } from "./events/hoverbox/hoverbox.component";
 import { KeytrackerComponent } from "./events/keytracker/keytracker.component";
+import { ConnectionComponent } from "./conditions/connection/connection.component";
+import { PermissionsComponent } from "./conditions/permissions/permissions.component";
+import { RoleSwitchComponent } from "./conditions/role-switch/role-switch.component";
+import { FormulaireComponent } from "./formulaire/formulaire.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, UserProfileComponent, BidirectionnalParentComponent, CommonModule, PaginationComponent, CommonModule, CardComponent, ButtonComponent, HoverboxComponent, KeytrackerComponent],
+  imports: [RouterOutlet, UserProfileComponent, BidirectionnalParentComponent, CommonModule, PaginationComponent, CommonModule, CardComponent, ButtonComponent, HoverboxComponent, KeytrackerComponent, ConnectionComponent, PermissionsComponent, RoleSwitchComponent, FormulaireComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

@@ -28,7 +28,7 @@
 </app-modal> -->
 
 
-<h2>Exercice 1</h2>
+<!-- <h2>Exercice 1</h2>
 <app-button></app-button>
 <h2>Exercice 2 & 3</h2>
 <app-hoverbox />
@@ -60,9 +60,9 @@ Case B.
 @default {
 Default case.
 }
-}
+} -->
 
-@if (isLoggedIn && isPremium){
+<!-- @if (isLoggedIn && isPremium){
 <p>Utilisateur premium connecté</p>
 }
 
@@ -72,6 +72,12 @@ Default case.
 
 @if (!isLoggedIn || !isPremium){
 <p>Utilisateur non-premium ou non-connecté</p>
-}
+} -->
+
+<app-connection/>
+<app-role-switch/>
+<app-permissions/>
+
+<app-formulaire/>
 
 <router-outlet />

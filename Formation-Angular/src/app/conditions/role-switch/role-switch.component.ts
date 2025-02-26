@@ -9,4 +9,9 @@ import { FormsModule } from '@angular/forms';
 })
 export class RoleSwitchComponent {
   role: string = 'user';
+
+  selectRole(newRole: Event) {
+    console.log(newRole)
+    this.role = (<HTMLSelectElement>newRole.target).value;
+  }
 }

@@ -16,6 +16,30 @@
             }
         </div>
 
+        <div>
+            <label for="message">Message:</label>
+            <input id="message" formControlName="message" type="text" />
+            @if (formulaire.get('message')?.invalid && formulaire.get('message')?.touched) {
+            <small>Le message doit contenir au moins 10 caractères.</small>
+            }
+        </div>
+
+        <div>
+            <label for="langue">Langue:</label>
+            <select id="langue" formControlName="langue">
+                <option value="Francais">Francais</option>
+                <option value="Espagnol">Espagnol</option>
+                <option value="Anglais">Anglais</option>
+            </select>
+            @if (formulaire.get('langue')?.invalid && formulaire.get('langue')?.touched) {
+            <small>Langue non sélectionnée</small>
+            }
+        </div>
+
+
+
+
+
         <button type="submit" [disabled]="formulaire.invalid">Soumettre</button>
     </form>
 </div>

@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { WelcomeWithNameComponent } from "./welcome-with-name/welcome-with-name.component";
 import { UserInfoComponent } from "./user-info/user-info.component";
 import { UserProfileComponent } from "./user-profile/user-profile.component";
@@ -22,7 +22,7 @@ import { FormulaireGroupComponent } from "./formulaire/formulaire-group/formulai
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, UserProfileComponent, BidirectionnalParentComponent, CommonModule, PaginationComponent, CommonModule, CardComponent, ButtonComponent, HoverboxComponent, KeytrackerComponent, ConnectionComponent, PermissionsComponent, RoleSwitchComponent, FormulaireComponent, FormulaireGroupComponent],
+  imports: [RouterOutlet,RouterLink ,RouterLinkActive],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

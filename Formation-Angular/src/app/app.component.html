@@ -1,4 +1,4 @@
-<app-user-profile (mouseenter)="console()" [profession]="professionParent()" [annee]=4
+<!-- <app-user-profile (mouseenter)="console()" [profession]="professionParent()" [annee]=4
   (message)="receiveMessage($event)" />
 <button (click)="modify()">Modifier</button>
 <p>Message recu : {{receivedMessage}}</p>
@@ -13,11 +13,11 @@
 </ul>
 
 
-<!-- <ng-container *ngComponentOutlet="selectedComponent"></ng-container> -->
+<ng-container *ngComponentOutlet="selectedComponent"></ng-container> -->
 
-<app-card>
+<!-- <app-card>
   <p>Texte à l'intérieur d'une carte</p>
-</app-card>
+</app-card> -->
 
 <!-- <app-parent-outlet />
 <app-dynamic-parent />
@@ -74,11 +74,19 @@ Default case.
 <p>Utilisateur non-premium ou non-connecté</p>
 } -->
 
-<app-connection/>
+<!-- <app-connection/>
 <app-role-switch/>
 <app-permissions/>
 
 <app-formulaire/>
-<app-formulaire-group/>
+<app-formulaire-group/> -->
+
+
+<nav>
+  <ul>
+    <li><a routerLink="/first/42" routerLinkActive="active" ariaCurrentWhenActive="page">Premier component</a></li>
+    <li><a routerLink="/second" routerLinkActive="active" ariaCurrentWhenActive="page">Second component</a></li>
+  </ul>
+</nav>
 
 <router-outlet />

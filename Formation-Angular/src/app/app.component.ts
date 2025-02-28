@@ -20,6 +20,9 @@ import { RoleSwitchComponent } from "./conditions/role-switch/role-switch.compon
 import { FormulaireComponent } from "./formulaire/formulaire.component";
 import { FormulaireGroupComponent } from "./formulaire/formulaire-group/formulaire-group.component";
 import { StockDisplayComponentComponent } from "./lifecycle/stock-display-component/stock-display-component.component";
+import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { decrease, increment, incrementByNumber, reset } from './store/counter.actions';
 
 @Component({
   selector: 'app-root',
@@ -82,4 +85,26 @@ export class AppComponent {
   isPremium = true;
 
   condition = "c";
+
+  count$: Observable<number>
+
+  constructor(private store: Store<{count: number}>){
+    this.count$ = store.select('count');
+  }
+
+  incrementStore(){
+    this.store.dispatch(increment())
+  }
+
+  decreaseStore(){
+    this.store.dispatch(decrease())
+  }
+
+  resetStore(){
+    this.store.dispatch(reset())
+  }
+
+  incrementByNumberStore(number : number){
+    this.store.dispatch(incrementByNumber({combien: number}))
+  }
 }

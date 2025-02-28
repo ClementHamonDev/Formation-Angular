@@ -91,6 +91,13 @@ Default case.
 </nav> -->
 
 <app-stock-display-component [quantity]="quantity" [change]="change"></app-stock-display-component>
-<button (click)="increase()">Augmenter</button>
-<button (click)="decrease()">Baisser</button>
+
+<div>Separation</div>
+
+<p>Counter : {{count$ | async}}</p>
+<button (click)="incrementStore()">Increment</button>
+<button (click)="decreaseStore()">Decrease</button>
+<button (click)="resetStore()">Reset</button>
+<button (click)="incrementByNumberStore(10)">Increment By Number</button>
+
 <router-outlet />

@@ -19,10 +19,11 @@ import { PermissionsComponent } from "./conditions/permissions/permissions.compo
 import { RoleSwitchComponent } from "./conditions/role-switch/role-switch.component";
 import { FormulaireComponent } from "./formulaire/formulaire.component";
 import { FormulaireGroupComponent } from "./formulaire/formulaire-group/formulaire-group.component";
+import { StockDisplayComponentComponent } from "./lifecycle/stock-display-component/stock-display-component.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,RouterLink ,RouterLinkActive],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive, StockDisplayComponentComponent, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -36,6 +37,17 @@ export class AppComponent {
   names = ["Alice", "Bob", "Charlie"];
 
   currentPage = signal<number>(1);
+
+  quantity = 100;
+  change = 10;
+
+  increase(){
+    this.quantity= this.quantity + 10;
+  }
+
+  decrease(){
+    this.quantity= this.quantity - 20;
+  }
 
   selectedComponent = PaginationComponent;
 

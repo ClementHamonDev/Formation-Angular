@@ -16,14 +16,12 @@ export const routes: Routes = [
         ]
     },
     {
-        path: 'user/:id',
-        component: UserComponent,
+        path: 'user/:userId', component: UserComponent,
         children: [
             { path: 'info', component: UserInfoComponent },
             { path: 'settings', component: UserSettingComponent },
-            { path: '', redirectTo: 'info', pathMatch: 'full' }, // Redirection par défaut
         ]
     },
     { path: '404', component: NotFoundComponent },
-    { path: '**', redirectTo: '/404' }
+    // { path: '**', redirectTo: '/404' }
 ];

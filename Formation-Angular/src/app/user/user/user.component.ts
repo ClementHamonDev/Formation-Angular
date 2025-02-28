@@ -11,6 +11,6 @@ export class UserComponent {
   userId: string | null = '';
 
   constructor(private route: ActivatedRoute) {
-    this.userId = this.route.snapshot.paramMap.get('id');
+    this.userId = this.route.snapshot.paramMap.get('userId');
   }
 }

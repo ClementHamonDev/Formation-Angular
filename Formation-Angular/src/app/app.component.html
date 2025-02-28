@@ -82,12 +82,15 @@ Default case.
 <app-formulaire-group/> -->
 
 
-<nav>
+<!-- <nav>
   <ul>
     <li><a routerLink="/first/42" routerLinkActive="active" ariaCurrentWhenActive="page">Premier component</a></li>
     <li><a routerLink="/second" routerLinkActive="active" ariaCurrentWhenActive="page">Second component</a></li>
     <li><a routerLink="/user/1" routerLinkActive="active" ariaCurrentWhenActive="page">User</a></li>
   </ul>
-</nav>
+</nav> -->
 
+<app-stock-display-component [quantity]="quantity" [change]="change"></app-stock-display-component>
+<button (click)="increase()">Augmenter</button>
+<button (click)="decrease()">Baisser</button>
 <router-outlet />

@@ -23,11 +23,10 @@ import { StockDisplayComponentComponent } from "./lifecycle/stock-display-compon
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { decrease, increment, incrementByNumber, reset } from './store/counter.actions';
-import { HighlightDirective } from './directives/highlight.directive';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterLink, RouterLinkActive, StockDisplayComponentComponent, CommonModule, HighlightDirective],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive, StockDisplayComponentComponent, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

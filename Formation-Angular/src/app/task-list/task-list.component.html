@@ -1,0 +1,5 @@
+<div *ngFor="let task of tasks$ | async">
+    {{ task.title }} - {{ task.deadline }} - {{ task.assignedTo }}
+    <button (click)="deleteTask(task.id)">Supprimer</button>
+</div>
+<button (click)="addNewTask()">Ajouter une tâche</button>

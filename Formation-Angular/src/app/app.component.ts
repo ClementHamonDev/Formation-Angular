@@ -8,8 +8,6 @@ import { CommonModule } from '@angular/common';
 import { PaginationComponent } from "../pagination/pagination.component";
 import { AppListComponent } from "./app-list/app-list.component";
 import { CardComponent } from "./components/card-component/card-component.component";
-import { DynamicParentComponent } from "./components/dynamic-parent/dynamic-parent.component";
-import { ParentComponent } from "./components/parent-outlet/parent-outlet.component";
 import { ModalComponent} from "./components/modal/modal.component";
 import { ButtonComponent } from "./events/button/button.component";
 import { HoverboxComponent } from "./events/hoverbox/hoverbox.component";
@@ -23,10 +21,11 @@ import { StockDisplayComponentComponent } from "./lifecycle/stock-display-compon
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { decrease, increment, incrementByNumber, reset } from './store/counter.actions';
+import { TaskListComponent } from "./task-list/task-list.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterLink, RouterLinkActive, StockDisplayComponentComponent, CommonModule],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive, StockDisplayComponentComponent, CommonModule, TaskListComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

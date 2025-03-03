@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DynamicParentComponent } from './dynamic-parent.component';
+import { TaskListComponent } from './task-list.component';
 
-describe('DynamicParentComponent', () => {
-  let component: DynamicParentComponent;
-  let fixture: ComponentFixture<DynamicParentComponent>;
+describe('TaskListComponent', () => {
+  let component: TaskListComponent;
+  let fixture: ComponentFixture<TaskListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DynamicParentComponent]
+      imports: [TaskListComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(DynamicParentComponent);
+    fixture = TestBed.createComponent(TaskListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

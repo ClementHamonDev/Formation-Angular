@@ -4,10 +4,11 @@ import { AppComponent } from './app/app.component';
 import {provideStore, StoreModule} from '@ngrx/store';
 import { counterReducer } from './app/store/counter.reducers';
 import { provideEffects } from '@ngrx/effects';
+import { taskReducer } from './app/store/tasks.reducers';
 
 bootstrapApplication(AppComponent, {
   providers: [
-    provideStore({count: counterReducer}),
+    provideStore({count: counterReducer, tasks: taskReducer}),
     provideEffects([]),
     ...appConfig.providers
   ]

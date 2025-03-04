@@ -1,4 +1,21 @@
-<h1>Titre de la page</h1>
+<div *ngFor="let post of posts">
+  <h3>{{post.title}}</h3>
+  <p>{{post.body}}</p>
+</div>
+
+
+<!-- <h1>My First Attribute Directive</h1>
+<p appHighlight>Highlight me!</p>
+<p appHighlight [colorInput]="'yellow'">Highlight me!</p>
+<p appTextColor>Texte rouge</p>
+<p appHideElement>Texte caché</p>
+<label for="borderWidth">Border Width:</label>
+<input id="borderWidth" type="text" [(ngModel)]="borderWidth" placeholder="e.g., 2px" />
+
+<label for="borderColor">Border Color:</label>
+<input id="borderColor" type="text" [(ngModel)]="borderColor" placeholder="e.g., red" />
+
+<p appBorder [borderColor]="borderColor" [borderWidth]="borderWidth">Dynamic Border</p> -->
 
 <!-- <app-user-profile (mouseenter)="console()" [profession]="professionParent()" [annee]=4
   (message)="receiveMessage($event)" />

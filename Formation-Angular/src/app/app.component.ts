@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { WelcomeWithNameComponent } from "./welcome-with-name/welcome-with-name.component";
 import { UserInfoComponent } from "./user-info/user-info.component";
@@ -22,14 +22,20 @@ import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { decrease, increment, incrementByNumber, reset } from './store/counter.actions';
 import { TaskListComponent } from "./task-list/task-list.component";
+import { TextColorDirective } from './directives/text-color.directive';
+import { BorderDirective } from './directives/border.directive';
+import { HideElementDirective } from './directives/hide-element.directive';
+import { HighlightDirective } from './directives/highlight.directive';
+import { FormsModule } from '@angular/forms';
+import { ApiService } from './services/api.service';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterLink, RouterLinkActive, StockDisplayComponentComponent, CommonModule, TaskListComponent],
+  imports: [RouterOutlet, FormsModule, StockDisplayComponentComponent, CommonModule, TaskListComponent, HighlightDirective, TextColorDirective, HideElementDirective, BorderDirective ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'Formation-Angular';
 
   professionParent = signal("Eleve");
@@ -87,8 +93,18 @@ export class AppComponent {
 
   count$: Observable<number>
 
-  constructor(private store: Store<{count: number}>){
+  constructor(private store: Store<{count: number}>, private apiService : ApiService){
     this.count$ = store.select('count');
+  }
+
+  posts: any[] = [];
+
+  ngOnInit(): void{
+    this.apiService.getPosts().subscribe({
+      next: (data) => this.posts = data,
+      error: (e) => console.error(e),
+      complete: () => console.log("Completion")
+    })
   }
 
   incrementStore(){
@@ -106,4 +122,7 @@ export class AppComponent {
   incrementByNumberStore(number : number){
     this.store.dispatch(incrementByNumber({combien: number}))
   }
+
+  borderWidth: string = '';
+  borderColor: string = '';
 }

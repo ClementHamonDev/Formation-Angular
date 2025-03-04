@@ -28,10 +28,11 @@ import { HideElementDirective } from './directives/hide-element.directive';
 import { HighlightDirective } from './directives/highlight.directive';
 import { FormsModule } from '@angular/forms';
 import { ApiService } from './services/api.service';
+import { PokemonListComponent } from "./pokemon-list/pokemon-list.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, FormsModule, StockDisplayComponentComponent, CommonModule, TaskListComponent, HighlightDirective, TextColorDirective, HideElementDirective, BorderDirective ],
+  imports: [RouterOutlet, FormsModule, StockDisplayComponentComponent, CommonModule, TaskListComponent, HighlightDirective, TextColorDirective, HideElementDirective, BorderDirective, PokemonListComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

@@ -1,0 +1,22 @@
+<!-- <div class="pokemon-list">
+    <div *ngFor="let pokemon of pokemons">
+        <img [src]="pokemon.image" [alt]="pokemon.name">
+        <p>{{ pokemon.name }}</p>
+    </div>
+</div> -->
+
+<div class="filter">
+    <label for="type-select">Choisir un type :</label>
+    <select id="type-select" [(ngModel)]="selectedType" (change)="onTypeChange()">
+      <option value="">Tous</option>
+      <option *ngFor="let type of types" [value]="type.name">{{ type.name | titlecase }}</option>
+    </select>
+  </div>
+  
+  <div class="pokemon-list">
+    <div class="pokemon-card" *ngFor="let pokemon of pokemons">
+      <img [src]="pokemon.image" [alt]="pokemon.name">
+      <p>{{ pokemon.name | titlecase }}</p>
+    </div>
+  </div>
+  
